@@ -1,23 +1,19 @@
-/**
- * @author      ZEUS Design - http://www.zeusdesign.com.tw
- * @copyright   Copyright (c) 2016 ZEUS Design
- */
 
 @import "_oa";
 
-// @include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
-// @include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
-// [class^="icon-"], [class*=" icon-"] {
-//   font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
-//   speak: none;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-variant: normal;
-//   text-transform: none;
-//   line-height: 1;
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-//   @include font-smoothing(antialiased);
-// }
+  @include font-smoothing(antialiased);
+}
 
 * {
   &, &:after, &:before {
@@ -40,59 +36,322 @@ html {
     height: 100%;
     font-size: 13px;
     font-family: "Roboto", "微軟正黑體", Monaco, "Microsoft JhengHei" ;
-    background-color: rgba(216, 216, 216, 1.00);
+    background-color: white;
 
     @include font-smoothing(antialiased);
 
   }
 }
 
-$allwidth: 1000px;
+.icon-calendar:before {
+  content: "\e900";
+}
+.icon-clock:before {
+  content: "\e901";
+}
+.icon-pin-alt:before {
+  content: "\e902";
+}
+.icon-linkedin:before {
+  content: "\e903";
+}
+.icon-twitter:before {
+  content: "\e904";
+}
+.icon-vimeo:before {
+  content: "\e905";
+}
+.icon-share:before {
+  content: "\e80d";
+}
+
+
+
+$allwidth: 960px;
+
 
 header {
-  width: $allwidth;
-  margin: 0 auto;
+  width: 100%;
   background-color: white;
-  height: 110px;
+  padding: 30px 0;
+
+  img {
+    width: 10%;
+    height: auto;
+  }
 }
+
 
 
 nav {
-  margin: 0 auto;
-  width: $allwidth;
+  width: 100%;
   height: 50px;
   background-color: rgba(26, 25, 30, 1.00);
+
+  .navboxs {
+    max-width: $allwidth;
+    margin: 0 auto;
+
+      @include clearfix();
+
+      > a {
+        display: inline-block;
+        float: left;
+        cursor: pointer;
+        width: calc(100% / 6);
+        line-height: 50px;
+        color: white;
+        font-size: 16px;
+        font-weight: bolder;
+        text-decoration: none;
+
+        &:hover {
+          background-color: rgba(253, 98, 52, 1.00);
+          color: black;
+        }
+      }
+  }
 }
 
-footer {
-  width: $allwidth;
-  margin: 0 auto;
-  height: 90px;
-  background-color: rgba(26, 25, 30, 1.00);
 
-  @include clearfix();
 
-  p, a {
-    display: inline-block;
-    color: rgba(126, 121, 125, 1.00);
-    line-height: 90px;
-  }
+.bannerboxs {
+  width: 100%;
+  padding: 100px 0;
+  background-color: rgba(115, 116, 117, 1.00);
 
-  p {
-    float: left;
+  .times, .bigtitle, .title {
     padding: 0;
     margin: 0;
-    padding-left: 20px;
+    color: white;
+    white-space: nowrap;
+    // 保留空格
+  }
+
+  .times {
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    // 全部大寫
+  }
+
+  .bigtitle {
+    font-size: 115px;
+    font-weight: 600;
+    padding-top: 50px;
+    text-transform: capitalize;
+    // 第一個字大寫
+  }
+
+  .title {
+    font-size: 26px;
+    font-weight: 300;
+    padding-top: 50px;
   }
 
   a {
+    display: inline-block;
     cursor: pointer;
-    float: right;
-    text-decoration: none;
-    padding-right: 20px;
+    color: white;
+    font-size: 18px;
+    padding: 10px 50px;
+    font-weight: 300px;
+    background-color: rgba(253, 98, 52, 1.00);
+    @include border-radius(20px); 
+    margin-top: 50px;
 
     &:hover {
-      color: rgba(253, 110, 66, 1.00);
+      background-color: rgba(253, 98, 52, .8);
+    }
+  }
+}
+
+
+
+.middleboxs {
+  max-width: $allwidth;
+  margin: 0 auto;
+  padding: 60px 0;  
+
+  .lineboxs {
+    width: 100%;
+    border-bottom: 1px solid rgba(211, 212, 213, 1.00); 
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+
+    .line_a, .line_b {
+      padding: 0;
+      margin: 0;
+      color: black;
+    }
+
+    .line_a {
+      font-size: 13px;
+      font-weight: 300;
+      text-transform: uppercase;
+      white-space: nowrap;
+      letter-spacing: 6px;
+      padding-bottom: 20px;
+    }
+
+    .line_b {
+      font-size: 38px;
+      font-weight: bolder;
+      text-transform: capitalize;
+    }
+  }
+
+  .centboxs {
+    width: 100%;
+    margin-bottom: 35px;
+    @include clearfix();
+
+    > div {
+      float: left;
+      width: calc(100% / 3 - (30px * 2) / 3);
+      height: 195px;
+      background-color: rgba(171, 172, 173, 1.00);
+      position: relative;
+    
+      &:nth-child(3n + 2) {
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+
+      &:nth-child(n + 4) {
+        margin-top: 30px;
+      }
+
+      span {
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        display: inline-block;
+        background-color: rgba(26, 27, 28, 1.00);
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bolder;
+        padding: 8px 0;
+
+        &:hover {
+          background-color: rgba(26, 27, 28, .8);
+        }
+      }
+    }
+  }
+
+  .bigboxs {
+    width: 100%;
+    height: 350px;
+    background-color: rgba(192, 193, 194, 1.00);
+  }
+
+  .centboxs_2 {
+    width: 100%;
+    margin: 13px 0 35px 0;
+    @include clearfix();
+
+    > div {
+      width: calc(100% / 3 - (13px * 2) / 3);
+      background-color: rgba(192, 193, 194, 1.00);
+      height: 110px;
+      float: left;
+
+      &:nth-child(2) {
+        margin-left: 13px; 
+        margin-right: 13px;
+      }
+    }
+  }
+
+  .readbtn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(139, 140, 141, 1.00);
+    border: 1px solid rgba(139, 140, 141, 1.00);
+    background-color: rgba(255, 255, 255, 0);
+    @include border-radius(15px);
+    padding: 5px 15px;
+
+    &:hover {
+      color: rgba(253, 98, 52, 1.00);
+      border: 1px solid rgba(253, 98, 52, 1.00);
+    }
+  }
+
+
+  .infoboxs {
+    width: 100%;
+
+    @include split-right(500px, '.infoleft', '.inforight');
+
+    .infoleft {
+
+      .infobox {
+        width: 100%;
+
+        .info_top{
+          font-size: 18px;
+          font-weight: 600;
+          color: rgba(69, 69, 70, 1.00);
+        }
+
+        .info_down {
+          font-size: 16px;
+          font-weight: 400;
+          color: rgba(154, 155, 156, 1.00);
+        }
+      }
+    }
+
+    .inforight {
+      height: 315px;
+      background-color: rgba(214, 215, 216, 1.00);
+    }
+  }
+}
+
+
+
+footer {
+  width: 100%;
+  height: 90px;
+  background-color: rgba(26, 25, 30, 1.00);
+
+  .footerboxs {
+    max-width: $allwidth;
+    margin: 0 auto;
+
+    @include clearfix();
+
+    p, a {
+      display: inline-block;
+      color: rgba(126, 121, 125, 1.00);
+      line-height: 90px;
+    }
+
+    p {
+      float: left;
+      padding: 0;
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    a {
+      cursor: pointer;
+      float: right;
+      text-decoration: none;
+      padding-right: 20px;
+
+      &:hover {
+        color: rgba(253, 110, 66, 1.00);
+      }
     }
   }
 }
