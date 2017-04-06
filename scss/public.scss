@@ -124,7 +124,7 @@ nav {
     padding: 0;
     margin: 0;
     color: white;
-    white-space: nowrap;
+    white-space: pre-wrap;
     // 保留空格
   }
 
@@ -168,7 +168,7 @@ nav {
 
 
 
-.middleboxs {
+.middleboxs, .contactboxs {
   max-width: $allwidth;
   margin: 0 auto;
   padding: 60px 0;  
@@ -273,6 +273,7 @@ nav {
     cursor: pointer;
     font-size: 16px;
     font-weight: 300;
+    text-transform: capitalize;
     color: rgba(139, 140, 141, 1.00);
     border: 1px solid rgba(139, 140, 141, 1.00);
     background-color: rgba(255, 255, 255, 0);
@@ -340,17 +341,16 @@ nav {
             padding-left: 10px;
           }
           
+          &:first-child {
+            padding-left: 33px;
+          }
+
           &:last-child {
             &:after {
               content: ' ';
             }            
           }
-
-          &:first-child {
-            &:before {
-              padding-left: 33px;
-            }
-          }
+        
 
           a {
             cursor: pointer;
@@ -366,6 +366,33 @@ nav {
             }
           }
         }
+
+        .iconbox {
+          margin-top: 10px;
+          float: left;
+          cursor: pointer;
+          display: inline-block;
+          padding: 10px;
+          background-color: rgba(233, 234, 235, 1.00);
+          color: rgba(107, 108, 109, 1.00);
+          text-decoration: none;
+          @include border-radius(3px);
+          
+
+          &:hover {
+            background-color: rgba(253, 98, 52, 1.00);
+            color: white;
+          }
+
+          &:nth-child(1) {
+            margin-left: 33px;
+          }
+
+          &:nth-child(n + 2) {
+            margin-left: 10px;
+          }
+          
+        }
       }
     }
 
@@ -376,6 +403,49 @@ nav {
   }
 }
 
+
+.contactboxs {
+  @include clearfix();
+  
+  .contactbox {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    border: 1px solid rgba(255, 0, 0, .3);
+
+    @include clearfix();
+
+    &:first-child {
+      padding-right: 10px;
+    }
+
+    .co_title {
+      white-space: pre-wrap;
+      text-transform: capitalize;
+      text-align: left;
+      font-size: 22px;
+      font-weight: bolder;
+      padding-bottom: 20px;
+      color: rgba(45, 46, 47, 1.00);
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+      font-size: 16px; 
+      color: rgba(129, 130, 131, 1.00);
+      text-align: left;
+      line-height: 28px;
+      padding-bottom: 20px;
+    }
+
+    .btn {
+      float: left;
+    }
+
+
+  }
+}
 
 
 footer {
