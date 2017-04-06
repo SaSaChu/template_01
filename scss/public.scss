@@ -292,20 +292,79 @@ nav {
     @include split-right(500px, '.infoleft', '.inforight');
 
     .infoleft {
-
+      @include clearfix();
+      
       .infobox {
+        display: inline-block;
         width: 100%;
+        padding-bottom: 30px;
+
+        .info_top, .info_down {
+          text-align: left;
+          text-transform: capitalize;
+        }
 
         .info_top{
           font-size: 18px;
           font-weight: 600;
-          color: rgba(69, 69, 70, 1.00);
+          color: rgba(69, 69, 70, 1.00);  
+
+          p {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            margin-right: 15px;
+          }      
         }
 
         .info_down {
+          padding: 0;
+          margin: 0;
+          padding-top: 10px;
           font-size: 16px;
           font-weight: 400;
           color: rgba(154, 155, 156, 1.00);
+          text-indent: 33px;
+        }
+
+        .add {
+          display: inline-block;
+          float: left;
+          color: rgba(154, 155, 156, 1.00);
+          padding-top: 10px;
+
+          &:after {
+            display: inline-block;
+            content: '│';
+            margin-right: 10px;
+            padding-left: 10px;
+          }
+          
+          &:last-child {
+            &:after {
+              content: ' ';
+            }            
+          }
+
+          &:first-child {
+            &:before {
+              padding-left: 33px;
+            }
+          }
+
+          a {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(154, 155, 156, 1.00);
+            text-decoration: none;
+            text-align: left;
+
+            &:hover {
+              color: rgba(253, 98, 52, 1.00);
+            }
+          }
         }
       }
     }
